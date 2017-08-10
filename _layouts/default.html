@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Bootstrap Theme Company Page</title>
+<head> 
+  <title>TinkorSoft</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,28 +13,29 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
+<!-- menu -->
 {% include menu.html %}
 
 <div class="jumbotron text-center">
-  <h1>Company</h1> 
-  <p>We specialize in blablabla</p> 
+  <h1>Tinkor Software</h1> 
+  <p>We specialize in Web based 3D</p> 
   <form>
     <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <input type="email" class="form-control" size="50" placeholder="" required>
       <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
+        <button type="button" class="btn btn-danger">Search</button>
       </div>
     </div>
   </form>
 </div>
 
+<!-- posts -->
 {% for page in site.posts reversed %}
-  <h3>{{ page.title }}</h3>
+  <!-- <h3>{{ page.title }}</h3> -->
   {{ page.content }}
-
 {% endfor %}
 
-
+<!-- footer -->
 {% include footer.html %}
 
 <script>
