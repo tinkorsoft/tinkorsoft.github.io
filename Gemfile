@@ -27,3 +27,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rack-jekyll'
 gem 'rake'
 gem 'puma'
+gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
