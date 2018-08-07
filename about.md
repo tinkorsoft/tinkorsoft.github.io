@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: glint
 title: About
 permalink: /about/
 ---
