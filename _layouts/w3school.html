@@ -15,7 +15,7 @@
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <!-- menu -->
-{% include menu.html %}
+{% include _w3school/menu.html %}
 
 <div class="jumbotron text-center ">
   <h1>Tinkor Software</h1> 
@@ -32,12 +32,14 @@
 
 <!-- posts -->
 {% for page in site.posts reversed %}
-  <!-- <h3>{{ page.title }}</h3> -->
-  {{ page.content }}
+  {% if page.path contains 'w3school' %}
+    <!-- <h3>{{ page.title }}</h3> -->
+    {{ page.content }}
+  {% endif %}
 {% endfor %}
 
 <!-- footer -->
-{% include footer.html %}
+{% include _w3school/footer.html %}
 
 <script>
 $(document).ready(function(){
