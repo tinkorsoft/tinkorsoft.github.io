@@ -334,21 +334,28 @@
             submitHandler: function(form) {
     
                 var sLoader = $('.submit-loader');
-    
+                var dat = {
+                  'name': $('#contactName').val(),
+                  'email': $('#contactEmail').val(),
+                  'title': $('#contactSubject').val(),
+                  'text': $('#contactMessage').val(),
+                  'source': 'tinkor',
+                  'status': 'new'
+                }
+
                 $.ajax({
-    
                     type: "POST",
-                    url: "inc/sendEmail.php",
-                    data: $(form).serialize(),
+                    url: 'https://contact.tinkor.com/api.php/records/contacts',
+                    data: dat,
                     beforeSend: function() { 
     
                         sLoader.slideDown("slow");
     
                     },
                     success: function(msg) {
-    
+                        var id = parseInt(msg)
                         // Message was sent
-                        if (msg == 'OK') {
+                        if (!isNaN(id)) {
                             sLoader.slideUp("slow"); 
                             $('.message-warning').fadeOut();
                             $('#contactForm').fadeOut();
